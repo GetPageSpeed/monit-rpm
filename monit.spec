@@ -1,6 +1,6 @@
 Name:           monit
 Version:        5.19.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet
@@ -99,6 +99,18 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com> 5.19.0-2
+- Missing files (ciapnz@gmail.com)
+
+* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com>
+- Missing files (ciapnz@gmail.com)
+
+* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com>
+- Missing files (ciapnz@gmail.com)
+
+* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com>
+- Missing files (ciapnz@gmail.com)
+
 * Tue Oct 04 2016 Unknown name <ciapnz@gmail.com> 5.19.0-1
 - new package built with tito
 
