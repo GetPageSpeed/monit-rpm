@@ -1,6 +1,6 @@
 Name:           monit
 Version:        5.19.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet
@@ -99,6 +99,12 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Oct 05 2016 Unknown name <ciapnz@gmail.com> 5.19.0-3
+- Unannexed (ciapnz@gmail.com)
+- Unannexed (ciapnz@gmail.com)
+- content removed from git annex (ciapnz@gmail.com)
+- Tito prefs (ciapnz@gmail.com)
+
 * Tue Oct 04 2016 Unknown name <ciapnz@gmail.com> 5.19.0-2
 - Missing files (ciapnz@gmail.com)
 
