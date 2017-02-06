@@ -1,5 +1,7 @@
 # monit-rpm
 
+[<img src="https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/status_image/last_build.png">](https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/)
+
 A playground of RPM builder :)
 
 Using https://github.com/dgoodwin/tito
