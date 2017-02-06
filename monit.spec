@@ -1,6 +1,6 @@
 Name:           monit
 Version:        5.20.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet
@@ -99,6 +99,12 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Feb 06 2017 Unknown name 5.20.0-4
+- Update to 5.20
+- Status update (ciapnz@gmail.com)
+- Update README.md (ciapnz@gmail.com)
+- Create README.md (ciapnz@gmail.com)
+
 * Wed Oct 05 2016 Unknown name <ciapnz@gmail.com> 5.19.0-3
 - Unannexed (ciapnz@gmail.com)
 - Unannexed (ciapnz@gmail.com)
