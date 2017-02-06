@@ -1,8 +1,13 @@
-# monit-rpm
+# Latest Monit on CentOS 7
 
 [<img src="https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/status_image/last_build.png">](https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/)
 
-A playground of RPM builder :)
+Install latest Monit 5.20.0 on CentOS using the following commands:
+
+    sudo curl -sL -o /etc/yum.repos.d/getpagespeed-monit.repo https://copr.fedoraproject.org/coprs/getpagespeed/monit/repo/epel-7/getpagespeed-monit-epel-7.repo
+    sudo yum install monit
+
+What follows, is notes to myself on how it's done, aka "A playground of RPM builder" :)
 
 Using https://github.com/dgoodwin/tito
 https://m0dlx.com/blog/Reproducible_builds_on_Copr_with_tito_and_git_annex.html
