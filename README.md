@@ -2,10 +2,17 @@
 
 [<img src="https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/status_image/last_build.png">](https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/)
 
-Install latest Monit 5.20.0 on CentOS using the following commands:
+Install latest Monit on CentOS using the following commands:
 
     sudo curl -sL -o /etc/yum.repos.d/getpagespeed-monit.repo https://copr.fedoraproject.org/coprs/getpagespeed/monit/repo/epel-7/getpagespeed-monit-epel-7.repo
     sudo yum install monit
+
+Should you find that there is a more recent (our built version can be found in repository's latest tag), please open a ticket.
+
+## Background
+
+Monit in EPEL repository has not been updated in a year, but we want a more recent version at all times.
+This repository contains spec file from [upstream](https://dl.fedoraproject.org/pub/epel/7/SRPMS/m/monit-5.14-1.el7.src.rpm) and rebuilds latest Monit version onto COPR. The result is a special YUM repository you can add to your system in order to install fresh Monit.
 
 What follows, is notes to myself on how it's done, aka "A playground of RPM builder" :)
 
