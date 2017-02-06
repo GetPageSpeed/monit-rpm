@@ -99,32 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Mon Feb 06 2017 Unknown name 5.20.0-4
+* Mon Feb 06 2017 Danila Vershinin <ciapnz@gmail.com> - 5.20.0-4
 - Update to 5.20
-- Status update (ciapnz@gmail.com)
-- Update README.md (ciapnz@gmail.com)
-- Create README.md (ciapnz@gmail.com)
-
-* Wed Oct 05 2016 Unknown name <ciapnz@gmail.com> 5.19.0-3
-- Unannexed (ciapnz@gmail.com)
-- Unannexed (ciapnz@gmail.com)
-- content removed from git annex (ciapnz@gmail.com)
-- Tito prefs (ciapnz@gmail.com)
-
-* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com> 5.19.0-2
-- Missing files (ciapnz@gmail.com)
-
-* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com>
-- Missing files (ciapnz@gmail.com)
-
-* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com>
-- Missing files (ciapnz@gmail.com)
-
-* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com>
-- Missing files (ciapnz@gmail.com)
-
-* Tue Oct 04 2016 Unknown name <ciapnz@gmail.com> 5.19.0-1
-- new package built with tito
 
 * Sat Sep 12 2015 Stewart Adam <s.adam@diffingo.com> - 5.14-1
 - Upgrading to new upstream release 5.14.0
