@@ -28,18 +28,21 @@ http://miroslav.suchy.cz/blog/archives/2013/12/17/how_to_create_new_release_of_r
     --instructions 'do not try this, I am just doing demo for blogpost' \
     demo
     
-git config --global user.email ciapnz@gmail.com
-// create github repo, then:
-git init
-git annex init
-tito init
-// add all the files then
-// open tito.props and change builder to GitAnnexBuilder
-git annex addurl --file=monit-5.19.0.tar.gz https://mmonit.com/monit/dist/monit-5.19.0.tar.gz
-git commit -am "Add foo 1.2.3"
-git remote add origin https://github.com/dvershinin/monit-epel-rpm.git
-git push -u origin master
-tito tag --keep-version
+    
+## Setup tito
+
+    git config --global user.email ciapnz@gmail.com
+    // create github repo, then:
+    git init
+    git annex init # for large source tarballs
+    tito init
+    # for large tarballs: open tito.props and change builder to GitAnnexBuilder
+    # for small tarballs: open tito.props and change builder to GitAnnexBuilder
+    git annex addurl --file=monit-5.19.0.tar.gz https://mmonit.com/monit/dist/monit-5.19.0.tar.gz
+    git commit -am "Add foo 1.2.3"
+    git remote add origin https://github.com/dvershinin/monit-epel-rpm.git
+    git push -u origin master
+    tito tag --keep-version
 
 https://linux.die.net/man/8/tito
 
