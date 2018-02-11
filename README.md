@@ -1,6 +1,6 @@
 # Latest Monit on CentOS 7
 
-[<img src="https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/status_image/last_build.png">](https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/)
+[![Build Status](https://travis-ci.org/GetPageSpeed/monit-rpm.svg?branch=master)](https://travis-ci.org/GetPageSpeed/monit-rpm) [<img src="https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/status_image/last_build.png">](https://copr.fedorainfracloud.org/coprs/getpagespeed/monit/package/monit/) 
 
 Install latest Monit on CentOS using the following commands:
 
