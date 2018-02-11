@@ -15,7 +15,7 @@ Monit in EPEL repository has not been updated in a year, but we want a more rece
 
 This repository contains spec file from [upstream](https://dl.fedoraproject.org/pub/epel/7/SRPMS/m/monit-5.14-1.el7.src.rpm) and rebuilds latest Monit version onto COPR. The result is a special YUM repository you can add to your system in order to install fresh Monit.
 
-# Technical
+## Technical
 
 Using [Travis](https://gist.github.com/abn/daf262e7e454509df1429c87068923d1) to verify that the SRPM can be built successfully. The rest is done by COPR itself: it fetches the .spec file and builds SRPM on its own.
 
