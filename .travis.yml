@@ -18,6 +18,8 @@ before_install:
 
 script:
 - docker run -v ${PWD}:/sources -v ${PWD}:/output:Z ${DOCKER_IMAGE}:${OS_TYPE}-${OS_VERSION}
+- rm -rf *.src.rpm
+- stat *.rpm
 
 after_success:
 - package_cloud push getpagespeed/extras/el/7 *.rpm
