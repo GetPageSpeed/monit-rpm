@@ -16,6 +16,7 @@ BuildRequires: openssl-devel
 BuildRequires: pam-devel
 BuildRequires: byacc
 BuildRequires: systemd
+BuildRequires: gcc
 
 Requires(post): systemd-sysv
 Requires(post): systemd
