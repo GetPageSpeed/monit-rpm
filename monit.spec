@@ -16,6 +16,8 @@ BuildRequires: openssl-devel
 BuildRequires: pam-devel
 BuildRequires: byacc
 BuildRequires: systemd
+BuildRequires: gcc
+BuildRequires: make
 
 Requires(post): systemd-sysv
 Requires(post): systemd
@@ -33,7 +35,7 @@ and can execute meaningful causal actions in error situations.
 %setup -q
 
 %build
-%configure --disable-static
+%configure --disable-static --enable-optimized
 make %{?_smp_mflags}
 
 %install
