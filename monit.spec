@@ -1,6 +1,6 @@
 Name:           monit
 Version:        5.25.1
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet
@@ -101,6 +101,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Feb 19 2018 Danila Vershinin <ciapnz@gmail.com> - 5.25.1-5
+- Update to 5.25.1
+- Rebuild optimized version
+
 * Mon Feb 06 2017 Danila Vershinin <ciapnz@gmail.com> - 5.20.0-4
 - Update to 5.20
 
