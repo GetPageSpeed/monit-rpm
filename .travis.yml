@@ -1,13 +1,5 @@
 sudo: required
 language: python
-deploy:
-  provider: packagecloud
-  repository: getpagespeed
-  username: extras
-  dist: "el/7"
-  token:
-    secure: KiIHL3gZrJph8TJZjBPHkfSdWGKiXEq5rScxj4mtu/u3XzEfKCxu4qQ5Swb2xAcl/OfjNFcVGlKf2Jb1oBEzyJzN2dPPLM+BicbROk7Kcllop7Zw17jkM6Dey+wXw5DVhAO9S8lkGFl3GaOmRCkU/l8oPZMxpy7eaTcjmYNoOF97M61BXTa8baDgQSkOZaKMOlgMJmUaglMy/1ccQVHcBxMfxl01CxdE1oIUbmjx81l2epefmC+zVlcoptinSVQdLQpdqztF2EnskC7KauO2HrFJY/WVMPk06gePBGgWWsYg4sUTLEW7l02Q/k0l8fX+Rd3U/bjWwIYfsJo0Qe0LYnANmgS2ZNW+nWYec8Sn1VhT04CRLsL8yefT10VPvoHbqltwy34+4o0DQpNK9dhtQOT+l4lB5wFgpffUSb+obqfPS/JztnOFq9f4Nq+WperYb1XXicUhSnG8vPEZe6JKz5aMorsbxveRKUtx5P6GUa4MCSm+7s/y+RldUblg3FGe8fV1LwtfoIY6GVHVVb93/iu1ZSdKaecVa3rWGDoeo4tNWMlTCwCF4WtX5waDD27w2QrOKj0XqSpq2SpM5LTL6/zu35MJuUZXfql4xVHOkoGi4+HpG6z+tHJ/mzz8J/aewZWDhL4s2kU8Ny8iKVoRyQ93K1xMEqu5A37mE9+2cq8=
-before_deploy: "echo 'ready?'"
 
 env:
   global:
@@ -15,13 +7,17 @@ env:
   - OS_ARCH=x86_64
   matrix:
   - OS_TYPE=centos OS_DIST=epel OS_VERSION=7
+
 services:
 - docker
+
 install: true
+
 before_install:
 - gem install package_cloud
+
 script:
-- docker run -v ${PWD}:/sources -v ${PWD}:/output:Z -e "SRPM_ONLY=1" ${DOCKER_IMAGE}:${OS_TYPE}-${OS_VERSION}
 - docker run -v ${PWD}:/sources -v ${PWD}:/output:Z ${DOCKER_IMAGE}:${OS_TYPE}-${OS_VERSION}
+
 after_success:
 - package_cloud push getpagespeed/extras/el/7 *.rpm
