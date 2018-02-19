@@ -18,6 +18,7 @@ before_install:
 
 script:
   - docker run -v ${PWD}:/sources -v ${PWD}:/output:Z -e "SRPM_ONLY=1" ${DOCKER_IMAGE}:${OS_TYPE}-${OS_VERSION}
+  - docker run -v ${PWD}:/sources -v ${PWD}:/output:Z ${DOCKER_IMAGE}:${OS_TYPE}-${OS_VERSION}
   
 after_success:  
-  - package_cloud push getpagespeed/extras/el/7 *.src.rpm
+  - package_cloud push getpagespeed/extras/el/7 *.rpm
