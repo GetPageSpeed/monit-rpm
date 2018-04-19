@@ -29,6 +29,9 @@ jobs:
           name: "Where am I"
           command: pwd
       - run:
+          name: "Test keys"
+          command: ssh -v builder@$GPS_BUILD_SERVER
+      - run:
           name: "Deploy all RPMs to GetPageSpeed repo."
           command: scp -r *.rpm builder@$GPS_BUILD_SERVER:$GPS_EL7_X86_64_RPMS/
 workflows:
