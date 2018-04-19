@@ -1,6 +1,6 @@
 Name:           monit
 Version:        5.25.1
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet

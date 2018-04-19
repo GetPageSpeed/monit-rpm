@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: "Build all the .spec files via Docker image."
+          command: docker run -v ${PWD}:/sources -v ${PWD}:/output:Z ${DOCKER_IMAGE}:${OS_TYPE}-${OS_VERSION}
+      - run:
+          name: "Get rid of .src.rpm files."
+          command: rm -rf *.src.rpm
+      - run:
+          name: "Check .rpm files."
+          command: stat *.rpm
+      - run:
+          name: "Where am I"
+          command: pwd
+      - persist_to_workspace:
+          root: /home/circleci
+          paths:
+            - project
+  deploy:
+    machine: true
+    steps:
+      - attach_workspace:
+          at: /home/circleci
+      - run:
+          name: "Where am I"
+          command: pwd
+      - run:
+          name: "Deploy all RPMs to GetPageSpeed repo."
+          command: scp -r *.rpm builder@$GPS_BUILD_SERVER:$GPS_EL7_X86_64_RPMS/
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
