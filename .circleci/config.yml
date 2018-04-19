@@ -3,6 +3,9 @@ jobs:
   build:
     machine: true
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82"     
       - checkout
       - run:
           name: "Build all the .spec files via Docker image."
@@ -31,9 +34,6 @@ jobs:
       - run:
           name: "Where am I"
           command: pwd
-      - run:
-          name: "Test keys"
-          command: ssh -v builder@$GPS_BUILD_SERVER
       - run:
           name: "Deploy all RPMs to GetPageSpeed repo."
           command: scp -r *.rpm builder@$GPS_BUILD_SERVER:$GPS_EL7_X86_64_RPMS/
