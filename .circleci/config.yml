@@ -25,6 +25,9 @@ jobs:
     steps:
       - attach_workspace:
           at: /home/circleci
+      - add_ssh_keys:
+          fingerprints:
+            - "8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82"          
       - run:
           name: "Where am I"
           command: pwd
