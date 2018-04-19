@@ -27,10 +27,13 @@ jobs:
           at: /home/circleci 
       - run:
           name: "Delete stupid keys that was added by CircleCI by default"
-          command: ssh-add -D          
+          command: ssh-add -D              
       - add_ssh_keys:
           fingerprints:
-            - "8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82"        
+            - "8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82"      
+      - run:
+          name: "Delete stupid keys that was added by CircleCI by default"
+          command: cat ~/.ssh/config              
       - run:
           name: "Deploy all RPMs to GetPageSpeed repo."
           command: scp -r *.rpm $GPS_BUILD_USER@$GPS_BUILD_SERVER:$GPS_EXTRAS_EL7/x86_64/RPMS/
