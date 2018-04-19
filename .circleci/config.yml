@@ -32,14 +32,21 @@ jobs:
           fingerprints:
             - "8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82"        
       - run:
-          name: "Where am I"
-          command: pwd
-      - run:
           name: "Deploy all RPMs to GetPageSpeed repo."
-          command: scp -r *.rpm builder@$GPS_BUILD_SERVER:$GPS_EL7_X86_64_RPMS/
+          command: scp -r *.rpm $GPS_BUILD_USER@$GPS_BUILD_SERVER:$GPS_EXTRAS_EL7/x86_64/RPMS/
+          context: getpagespeed-builder
       - run:
           name: "Sign the RPMs."
-          command: ssh builder@$GPS_BUILD_SERVER "~/rpm-sign.exp $GPS_EL7_X86_64_RPMS/*.rpm"
+          command: ssh $GPS_BUILD_USER@$GPS_BUILD_SERVER "~/rpm-sign.exp $GPS_EXTRAS_EL7/x86_64/RPMS/*.rpm"
+          context: getpagespeed-builder
+      - run:
+          name: "Recreate repo files."
+          command: ssh $GPS_BUILD_USER@$GPS_BUILD_SERVER "createrepo -v --deltas --oldpackagedirs $GPS_EXTRAS_EL7/x86_64/ $GPS_EXTRAS_EL7/x86_64/"
+          context: getpagespeed-builder  
+      - run:
+          name: "Generate repo view."
+          command: ssh $GPS_BUILD_USER@$GPS_BUILD_SERVER "repoview $GPS_EXTRAS_EL7/x86_64/"
+          context: getpagespeed-builder                    
 workflows:
   version: 2
   build_deploy:
