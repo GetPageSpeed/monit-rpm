@@ -32,23 +32,22 @@ and can execute meaningful causal actions in error situations.
 
 
 %prep
-%setup -q
+%autosetup
 
 %build
 %configure --disable-static --enable-optimized
-make %{?_smp_mflags}
+%make_build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-make install DESTDIR=$RPM_BUILD_ROOT
+%make_install
 
-install -p -D -m0600 monitrc $RPM_BUILD_ROOT%{_sysconfdir}/monitrc
-install -p -D -m0755 monit $RPM_BUILD_ROOT%{_bindir}/monit
+%{__install} -p -D -m0600 monitrc %{buildroot}%{_sysconfdir}/monitrc
+%{__install} -p -D -m0755 monit %{buildroot}%{_bindir}/monit
 
 # Log file & logrotate config
-install -p -D -m0644 %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/logrotate.d/monit
+%{__install} -p -D -m0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/monit
 mkdir -p $RPM_BUILD_ROOT%{_localstatedir}/log
-install -m0600 /dev/null $RPM_BUILD_ROOT%{_localstatedir}/log/monit.log
+%{__install} -m0600 /dev/null $RPM_BUILD_ROOT%{_localstatedir}/log/monit.log
 
 # systemd service file
 mkdir -p ${RPM_BUILD_ROOT}%{_unitdir}
@@ -88,8 +87,8 @@ rm -rf $RPM_BUILD_ROOT
 /bin/systemctl try-restart monit.server > /dev/null 2>&1 || :
 
 %files
-%defattr(-,root,root,-)
-%doc COPYING README
+%license COPYING
+%doc README
 %config(noreplace) %{_sysconfdir}/monitrc
 %config(noreplace) %{_sysconfdir}/monit.d/logging
 %config(noreplace) %{_sysconfdir}/logrotate.d/monit
@@ -101,6 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu May 10 2018 Danila Vershinin <ciapnz@gmail.com> - 5.25.1-6
+- Improve packaging
+
 * Mon Feb 19 2018 Danila Vershinin <ciapnz@gmail.com> - 5.25.1-5
 - Update to 5.25.1
 - Rebuild optimized version
