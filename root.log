@@ -1,0 +1,368 @@
+INFO buildroot.py:350:  Mock Version: 1.4.11
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/pts
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/dev/pts
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/shm
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/dev/shm
+DEBUG buildroot.py:481:  kernel version == 3.10.0-862.11.6.el7.x86_64
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/etc/fstab
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/etc/yum/yum.conf
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/etc/dnf/dnf.conf
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/var/log/yum.log
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/var/cache/yum/
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '--bind', '/var/cache/mock/epel-7-x86_64/yum_cache/', '/var/lib/mock/epel-7-x86_64/root/var/cache/yum/'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG buildroot.py:143:  rootdir = /var/lib/mock/epel-7-x86_64/root
+DEBUG buildroot.py:144:  resultdir = .
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/etc/pki/mock
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/etc/yum/pluginconf.d
+DEBUG package_manager.py:256:  configure yum
+DEBUG package_manager.py:268:  configure yum priorities
+DEBUG package_manager.py:270:  configure yum rhnplugin
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '5f11afe66933458c9e376a267af68520', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/userdel', '-r', '-f', 'mockbuild'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '0705588fe0ac4d47904f16efaf088d65', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/groupdel', 'mock'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', 'd06445d2f49d411fbe74de79731ffc6c', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/groupadd', '-g', '135', 'mock'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '0d21da46fadc47b1b535272ef0566b43', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/useradd', '-o', '-m', '-u', '1003', '-g', '135', '-d', '/builddir', '-n', 'mockbuild'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/RPMS
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/RPMS
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/SPECS
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/SPECS
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/SRPMS
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/SRPMS
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/SOURCES
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/SOURCES
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILD
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILD
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILDROOT
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILDROOT
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/originals
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/originals
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/proc
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'proc', 'proc', '/var/lib/mock/epel-7-x86_64/root/proc'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/sys
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'sysfs', 'sysfs', '/var/lib/mock/epel-7-x86_64/root/sys'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/shm
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'tmpfs', 'tmpfs', '/var/lib/mock/epel-7-x86_64/root/dev/shm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/pts
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'devpts', '-o', 'gid=5,mode=0620,ptmxmode=0666,newinstance', 'devpts', '/var/lib/mock/epel-7-x86_64/root/dev/pts'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG package_manager.py:118:  ['/usr/bin/yum', '--installroot', '/var/lib/mock/epel-7-x86_64/root/', '-y', '--releasever', '7', 'update']
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/yum', '--installroot', '/var/lib/mock/epel-7-x86_64/root/', '-y', '--releasever', '7', 'update'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'LC_MESSAGES': 'C.UTF-8', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:489:  BUILDSTDERR: Failed to set locale, defaulting to C
+DEBUG util.py:491:  base                                                                                                                                                                                                                   | 3.6 kB  00:00:00     
+DEBUG util.py:491:  epel                                                                                                                                                                                                                   | 3.2 kB  00:00:00     
+DEBUG util.py:491:  extras                                                                                                                                                                                                                 | 3.4 kB  00:00:00     
+DEBUG util.py:489:  BUILDSTDERR: file:///var/www/vhosts/extras.getpagespeed.com/httpdocs/redhat/7/x86_64/repodata/repomd.xml: [Errno 14] curl#37 - "Couldn't open file /var/www/vhosts/extras.getpagespeed.com/httpdocs/redhat/7/x86_64/repodata/repomd.xml"
+DEBUG util.py:489:  BUILDSTDERR: Trying other mirror.
+DEBUG util.py:491:  updates                                                                                                                                                                                                                | 3.4 kB  00:00:00     
+DEBUG util.py:491:  (1/2): epel/primary                                                                                                                                                                                                    | 3.6 MB  00:00:00     
+DEBUG util.py:491:  (2/2): updates/primary_db                                                                                                                                                                                              | 5.2 MB  00:00:02     
+DEBUG util.py:491:  epel                                                                                                                                                                                                                              12661/12661
+DEBUG util.py:491:  No packages marked for update
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/dev/pts'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/dev/shm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/sys'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/proc'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/.initialized
+DEBUG util.py:651:  child environment: None
+DEBUG backend.py:413:  Copying package to result dir
+DEBUG util.py:226:  kill orphans
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '/var/lib/mock/epel-7-x86_64/root/var/cache/yum/'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['btrfs', 'subv', 'list', '/var/lib/mock'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 1
+DEBUG util.py:1392:  Please ignore the error above above about btrfs.
+INFO buildroot.py:350:  Mock Version: 1.4.11
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/pts
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/dev/pts
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/shm
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/dev/shm
+DEBUG buildroot.py:481:  kernel version == 3.10.0-862.11.6.el7.x86_64
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/etc/fstab
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/etc/yum/yum.conf
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/etc/dnf/dnf.conf
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/var/log/yum.log
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/var/cache/yum/
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '--bind', '/var/cache/mock/epel-7-x86_64/yum_cache/', '/var/lib/mock/epel-7-x86_64/root/var/cache/yum/'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG buildroot.py:143:  rootdir = /var/lib/mock/epel-7-x86_64/root
+DEBUG buildroot.py:144:  resultdir = .
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/etc/pki/mock
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/etc/yum/pluginconf.d
+DEBUG package_manager.py:256:  configure yum
+DEBUG package_manager.py:268:  configure yum priorities
+DEBUG package_manager.py:270:  configure yum rhnplugin
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '5ce163b638074c67b54878179bf2527d', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/userdel', '-r', '-f', 'mockbuild'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '26df91ce709e4b22b5277ded005a6e3e', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/groupdel', 'mock'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '35e135656bf14f32b15cf47f39daa6a3', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/groupadd', '-g', '135', 'mock'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '1f4d89641b0b4a1e9121995029d928c1', '-D', '/var/lib/mock/epel-7-x86_64/root', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '/usr/sbin/useradd', '-o', '-m', '-u', '1003', '-g', '135', '-d', '/builddir', '-n', 'mockbuild'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/RPMS
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/RPMS
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/SPECS
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/SPECS
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/SRPMS
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/SRPMS
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/SOURCES
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/SOURCES
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILD
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILD
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILDROOT
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/BUILDROOT
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/builddir/build/originals
+DEBUG util.py:117:  creating dir: /var/lib/mock/epel-7-x86_64/root/builddir/build/originals
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/proc
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'proc', 'proc', '/var/lib/mock/epel-7-x86_64/root/proc'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/sys
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'sysfs', 'sysfs', '/var/lib/mock/epel-7-x86_64/root/sys'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/shm
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'tmpfs', 'tmpfs', '/var/lib/mock/epel-7-x86_64/root/dev/shm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/pts
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'devpts', '-o', 'gid=5,mode=0620,ptmxmode=0666,newinstance', 'devpts', '/var/lib/mock/epel-7-x86_64/root/dev/pts'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG package_manager.py:118:  ['/usr/bin/yum', '--installroot', '/var/lib/mock/epel-7-x86_64/root/', '-y', '--releasever', '7', 'update']
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/yum', '--installroot', '/var/lib/mock/epel-7-x86_64/root/', '-y', '--releasever', '7', 'update'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'LC_MESSAGES': 'C.UTF-8', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:489:  BUILDSTDERR: Failed to set locale, defaulting to C
+DEBUG util.py:491:  base                                                                                                                                                                                                                   | 3.6 kB  00:00:00     
+DEBUG util.py:491:  epel                                                                                                                                                                                                                   | 3.2 kB  00:00:00     
+DEBUG util.py:491:  extras                                                                                                                                                                                                                 | 3.4 kB  00:00:00     
+DEBUG util.py:489:  BUILDSTDERR: file:///var/www/vhosts/extras.getpagespeed.com/httpdocs/redhat/7/x86_64/repodata/repomd.xml: [Errno 14] curl#37 - "Couldn't open file /var/www/vhosts/extras.getpagespeed.com/httpdocs/redhat/7/x86_64/repodata/repomd.xml"
+DEBUG util.py:489:  BUILDSTDERR: Trying other mirror.
+DEBUG util.py:491:  updates                                                                                                                                                                                                                | 3.4 kB  00:00:00     
+DEBUG util.py:491:  No packages marked for update
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/dev/pts'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/dev/shm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/sys'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/proc'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:127:  touching file: /var/lib/mock/epel-7-x86_64/root/.initialized
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '8e4cb9c8c18d46428185c23f22d5fe82', '-D', '/var/lib/mock/epel-7-x86_64/root', '--bind=/tmp/mock-resolv.a2Iyv1:/etc/resolv.conf', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '-u', 'mockbuild', '/bin/rpm', '-Uvh', '--nodeps', '/builddir/build/originals/monit-5.25.2-1.el7.src.rpm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:491:  Updating / installing...
+DEBUG util.py:491:  monit-5.25.2-1.el7                    ########################################
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/systemd-nspawn', '-q', '-M', '744dda2f176f441e93fd270f22626721', '-D', '/var/lib/mock/epel-7-x86_64/root', '--bind=/tmp/mock-resolv.a2Iyv1:/etc/resolv.conf', '--setenv=LANG=en_US.UTF-8', '--setenv=TERM=vt100', '--setenv=SHELL=/bin/bash', '--setenv=HOSTNAME=mock', '--setenv=PROMPT_COMMAND=printf "\\033]0;<mock-chroot>\\007"', '--setenv=HOME=/builddir', '--setenv=PATH=/usr/bin:/bin:/usr/sbin:/sbin', '--setenv=PS1=<mock-chroot> \\s-\\v\\$ ', '-u', 'mockbuild', '/bin/rpm', '-qpl', '/builddir/build/originals/monit-5.25.2-1.el7.src.rpm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:491:  monit-5.25.2.tar.gz
+DEBUG util.py:491:  monit-logging-conf
+DEBUG util.py:491:  monit.logrotate
+DEBUG util.py:491:  monit.service
+DEBUG util.py:491:  monit.spec
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/proc
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'proc', 'proc', '/var/lib/mock/epel-7-x86_64/root/proc'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/sys
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'sysfs', 'sysfs', '/var/lib/mock/epel-7-x86_64/root/sys'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/shm
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'tmpfs', 'tmpfs', '/var/lib/mock/epel-7-x86_64/root/dev/shm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:114:  ensuring that dir exists: /var/lib/mock/epel-7-x86_64/root/dev/pts
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/mount', '-n', '-t', 'devpts', '-o', 'gid=5,mode=0620,ptmxmode=0666,newinstance', 'devpts', '/var/lib/mock/epel-7-x86_64/root/dev/pts'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG package_manager.py:118:  ['/usr/bin/yum-builddep', '--installroot', '/var/lib/mock/epel-7-x86_64/root/', '--releasever', '7', '/var/lib/mock/epel-7-x86_64/root//builddir/build/SRPMS/monit-5.25.2-1.el7.src.rpm']
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/usr/bin/yum-builddep', '--installroot', '/var/lib/mock/epel-7-x86_64/root/', '--releasever', '7', '/var/lib/mock/epel-7-x86_64/root//builddir/build/SRPMS/monit-5.25.2-1.el7.src.rpm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'LC_MESSAGES': 'C.UTF-8', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell False
+DEBUG util.py:489:  BUILDSTDERR: Failed to set locale, defaulting to C
+DEBUG util.py:491:  file:///var/www/vhosts/extras.getpagespeed.com/httpdocs/redhat/7/x86_64/repodata/repomd.xml: [Errno 14] curl#37 - "Couldn't open file /var/www/vhosts/extras.getpagespeed.com/httpdocs/redhat/7/x86_64/repodata/repomd.xml"
+DEBUG util.py:491:  Trying other mirror.
+DEBUG util.py:491:  Getting requirements for monit-5.25.2-1.el7.src
+DEBUG util.py:491:   --> flex-2.5.37-3.el7.x86_64
+DEBUG util.py:491:   --> 1:openssl-devel-1.0.2k-12.el7.x86_64
+DEBUG util.py:491:   --> pam-devel-1.1.8-22.el7.x86_64
+DEBUG util.py:491:   --> byacc-1.9.20130304-3.el7.x86_64
+DEBUG util.py:491:   --> Already installed : systemd-219-57.el7_5.1.x86_64
+DEBUG util.py:491:   --> Already installed : gcc-4.8.5-28.el7_5.1.x86_64
+DEBUG util.py:491:   --> Already installed : 1:make-3.82-23.el7.x86_64
+DEBUG util.py:491:  --> Running transaction check
+DEBUG util.py:491:  ---> Package byacc.x86_64 0:1.9.20130304-3.el7 will be installed
+DEBUG util.py:491:  ---> Package flex.x86_64 0:2.5.37-3.el7 will be installed
+DEBUG util.py:491:  --> Processing Dependency: m4 for package: flex-2.5.37-3.el7.x86_64
+DEBUG util.py:491:  ---> Package openssl-devel.x86_64 1:1.0.2k-12.el7 will be installed
+DEBUG util.py:491:  --> Processing Dependency: zlib-devel(x86-64) for package: 1:openssl-devel-1.0.2k-12.el7.x86_64
+DEBUG util.py:491:  --> Processing Dependency: krb5-devel(x86-64) for package: 1:openssl-devel-1.0.2k-12.el7.x86_64
+DEBUG util.py:491:  ---> Package pam-devel.x86_64 0:1.1.8-22.el7 will be installed
+DEBUG util.py:491:  --> Running transaction check
+DEBUG util.py:491:  ---> Package krb5-devel.x86_64 0:1.15.1-19.el7 will be installed
+DEBUG util.py:491:  --> Processing Dependency: libkadm5(x86-64) = 1.15.1-19.el7 for package: krb5-devel-1.15.1-19.el7.x86_64
+DEBUG util.py:491:  --> Processing Dependency: libverto-devel for package: krb5-devel-1.15.1-19.el7.x86_64
+DEBUG util.py:491:  --> Processing Dependency: libselinux-devel for package: krb5-devel-1.15.1-19.el7.x86_64
+DEBUG util.py:491:  --> Processing Dependency: libcom_err-devel for package: krb5-devel-1.15.1-19.el7.x86_64
+DEBUG util.py:491:  --> Processing Dependency: keyutils-libs-devel for package: krb5-devel-1.15.1-19.el7.x86_64
+DEBUG util.py:491:  ---> Package m4.x86_64 0:1.4.16-10.el7 will be installed
+DEBUG util.py:491:  ---> Package zlib-devel.x86_64 0:1.2.7-17.el7 will be installed
+DEBUG util.py:491:  --> Running transaction check
+DEBUG util.py:491:  ---> Package keyutils-libs-devel.x86_64 0:1.5.8-3.el7 will be installed
+DEBUG util.py:491:  ---> Package libcom_err-devel.x86_64 0:1.42.9-12.el7_5 will be installed
+DEBUG util.py:491:  ---> Package libkadm5.x86_64 0:1.15.1-19.el7 will be installed
+DEBUG util.py:491:  ---> Package libselinux-devel.x86_64 0:2.5-12.el7 will be installed
+DEBUG util.py:491:  --> Processing Dependency: libsepol-devel(x86-64) >= 2.5-6 for package: libselinux-devel-2.5-12.el7.x86_64
+DEBUG util.py:491:  --> Processing Dependency: pkgconfig(libsepol) for package: libselinux-devel-2.5-12.el7.x86_64
+DEBUG util.py:491:  --> Processing Dependency: pkgconfig(libpcre) for package: libselinux-devel-2.5-12.el7.x86_64
+DEBUG util.py:491:  ---> Package libverto-devel.x86_64 0:0.2.5-4.el7 will be installed
+DEBUG util.py:491:  --> Running transaction check
+DEBUG util.py:491:  ---> Package libsepol-devel.x86_64 0:2.5-8.1.el7 will be installed
+DEBUG util.py:491:  ---> Package pcre-devel.x86_64 0:8.32-17.el7 will be installed
+DEBUG util.py:491:  --> Finished Dependency Resolution
+DEBUG util.py:491:  Dependencies Resolved
+DEBUG util.py:491:  ==============================================================================================================================================================================================================================================
+DEBUG util.py:491:   Package                                                         Arch                                               Version                                                         Repository                                           Size
+DEBUG util.py:491:  ==============================================================================================================================================================================================================================================
+DEBUG util.py:491:  Installing:
+DEBUG util.py:491:   byacc                                                           x86_64                                             1.9.20130304-3.el7                                              base                                                 65 k
+DEBUG util.py:491:   flex                                                            x86_64                                             2.5.37-3.el7                                                    base                                                292 k
+DEBUG util.py:491:   openssl-devel                                                   x86_64                                             1:1.0.2k-12.el7                                                 base                                                1.5 M
+DEBUG util.py:491:   pam-devel                                                       x86_64                                             1.1.8-22.el7                                                    base                                                184 k
+DEBUG util.py:491:  Installing for dependencies:
+DEBUG util.py:491:   keyutils-libs-devel                                             x86_64                                             1.5.8-3.el7                                                     base                                                 37 k
+DEBUG util.py:491:   krb5-devel                                                      x86_64                                             1.15.1-19.el7                                                   updates                                             269 k
+DEBUG util.py:491:   libcom_err-devel                                                x86_64                                             1.42.9-12.el7_5                                                 updates                                              31 k
+DEBUG util.py:491:   libkadm5                                                        x86_64                                             1.15.1-19.el7                                                   updates                                             175 k
+DEBUG util.py:491:   libselinux-devel                                                x86_64                                             2.5-12.el7                                                      base                                                186 k
+DEBUG util.py:491:   libsepol-devel                                                  x86_64                                             2.5-8.1.el7                                                     base                                                 77 k
+DEBUG util.py:491:   libverto-devel                                                  x86_64                                             0.2.5-4.el7                                                     base                                                 12 k
+DEBUG util.py:491:   m4                                                              x86_64                                             1.4.16-10.el7                                                   base                                                256 k
+DEBUG util.py:491:   pcre-devel                                                      x86_64                                             8.32-17.el7                                                     base                                                480 k
+DEBUG util.py:491:   zlib-devel                                                      x86_64                                             1.2.7-17.el7                                                    base                                                 50 k
+DEBUG util.py:491:  Transaction Summary
+DEBUG util.py:491:  ==============================================================================================================================================================================================================================================
+DEBUG util.py:491:  Install  4 Packages (+10 Dependent packages)
+DEBUG util.py:491:  Total size: 3.6 M
+DEBUG util.py:491:  Total download size: 3.1 M
+DEBUG util.py:491:  Installed size: 7.9 M
+DEBUG util.py:491:  Downloading packages:
+DEBUG util.py:491:  (1/12): byacc-1.9.20130304-3.el7.x86_64.rpm                                                                                                                                                                            |  65 kB  00:00:00     
+DEBUG util.py:491:  (2/12): keyutils-libs-devel-1.5.8-3.el7.x86_64.rpm                                                                                                                                                                     |  37 kB  00:00:00     
+DEBUG util.py:491:  (3/12): libcom_err-devel-1.42.9-12.el7_5.x86_64.rpm                                                                                                                                                                    |  31 kB  00:00:00     
+DEBUG util.py:491:  (4/12): flex-2.5.37-3.el7.x86_64.rpm                                                                                                                                                                                   | 292 kB  00:00:00     
+DEBUG util.py:491:  (5/12): libsepol-devel-2.5-8.1.el7.x86_64.rpm                                                                                                                                                                          |  77 kB  00:00:00     
+DEBUG util.py:491:  (6/12): libselinux-devel-2.5-12.el7.x86_64.rpm                                                                                                                                                                         | 186 kB  00:00:00     
+DEBUG util.py:491:  (7/12): libverto-devel-0.2.5-4.el7.x86_64.rpm                                                                                                                                                                          |  12 kB  00:00:00     
+DEBUG util.py:491:  (8/12): m4-1.4.16-10.el7.x86_64.rpm                                                                                                                                                                                    | 256 kB  00:00:00     
+DEBUG util.py:491:  (9/12): pam-devel-1.1.8-22.el7.x86_64.rpm                                                                                                                                                                              | 184 kB  00:00:00     
+DEBUG util.py:491:  (10/12): openssl-devel-1.0.2k-12.el7.x86_64.rpm                                                                                                                                                                        | 1.5 MB  00:00:01     
+DEBUG util.py:491:  (11/12): zlib-devel-1.2.7-17.el7.x86_64.rpm                                                                                                                                                                            |  50 kB  00:00:00     
+DEBUG util.py:491:  (12/12): pcre-devel-8.32-17.el7.x86_64.rpm                                                                                                                                                                             | 480 kB  00:00:00     
+DEBUG util.py:491:  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DEBUG util.py:491:  Total                                                                                                                                                                                                         1.1 MB/s | 3.1 MB  00:00:02     
+DEBUG util.py:491:  Running transaction check
+DEBUG util.py:491:  Running transaction test
+DEBUG util.py:491:  Transaction test succeeded
+DEBUG util.py:491:  Running transaction
+DEBUG util.py:491:    Installing : keyutils-libs-devel-1.5.8-3.el7.x86_64                                                                                                                                                                                    1/14 
+DEBUG util.py:491:    Installing : m4-1.4.16-10.el7.x86_64                                                                                                                                                                                                   2/14 
+DEBUG util.py:491:    Installing : libcom_err-devel-1.42.9-12.el7_5.x86_64                                                                                                                                                                                   3/14 
+DEBUG util.py:491:    Installing : libkadm5-1.15.1-19.el7.x86_64                                                                                                                                                                                             4/14 
+DEBUG util.py:491:    Installing : libsepol-devel-2.5-8.1.el7.x86_64                                                                                                                                                                                         5/14 
+DEBUG util.py:491:    Installing : pcre-devel-8.32-17.el7.x86_64                                                                                                                                                                                             6/14 
+DEBUG util.py:491:    Installing : libselinux-devel-2.5-12.el7.x86_64                                                                                                                                                                                        7/14 
+DEBUG util.py:491:    Installing : libverto-devel-0.2.5-4.el7.x86_64                                                                                                                                                                                         8/14 
+DEBUG util.py:491:    Installing : krb5-devel-1.15.1-19.el7.x86_64                                                                                                                                                                                           9/14 
+DEBUG util.py:491:    Installing : zlib-devel-1.2.7-17.el7.x86_64                                                                                                                                                                                           10/14 
+DEBUG util.py:491:    Installing : 1:openssl-devel-1.0.2k-12.el7.x86_64                                                                                                                                                                                     11/14 
+DEBUG util.py:491:    Installing : flex-2.5.37-3.el7.x86_64                                                                                                                                                                                                 12/14 
+DEBUG util.py:491:    Installing : byacc-1.9.20130304-3.el7.x86_64                                                                                                                                                                                          13/14 
+DEBUG util.py:491:    Installing : pam-devel-1.1.8-22.el7.x86_64                                                                                                                                                                                            14/14 
+DEBUG util.py:491:    Verifying  : pam-devel-1.1.8-22.el7.x86_64                                                                                                                                                                                             1/14 
+DEBUG util.py:491:    Verifying  : krb5-devel-1.15.1-19.el7.x86_64                                                                                                                                                                                           2/14 
+DEBUG util.py:491:    Verifying  : zlib-devel-1.2.7-17.el7.x86_64                                                                                                                                                                                            3/14 
+DEBUG util.py:491:    Verifying  : 1:openssl-devel-1.0.2k-12.el7.x86_64                                                                                                                                                                                      4/14 
+DEBUG util.py:491:    Verifying  : libverto-devel-0.2.5-4.el7.x86_64                                                                                                                                                                                         5/14 
+DEBUG util.py:491:    Verifying  : pcre-devel-8.32-17.el7.x86_64                                                                                                                                                                                             6/14 
+DEBUG util.py:491:    Verifying  : libselinux-devel-2.5-12.el7.x86_64                                                                                                                                                                                        7/14 
+DEBUG util.py:491:    Verifying  : byacc-1.9.20130304-3.el7.x86_64                                                                                                                                                                                           8/14 
+DEBUG util.py:491:    Verifying  : libsepol-devel-2.5-8.1.el7.x86_64                                                                                                                                                                                         9/14 
+DEBUG util.py:491:    Verifying  : flex-2.5.37-3.el7.x86_64                                                                                                                                                                                                 10/14 
+DEBUG util.py:491:    Verifying  : libkadm5-1.15.1-19.el7.x86_64                                                                                                                                                                                            11/14 
+DEBUG util.py:491:    Verifying  : libcom_err-devel-1.42.9-12.el7_5.x86_64                                                                                                                                                                                  12/14 
+DEBUG util.py:491:    Verifying  : m4-1.4.16-10.el7.x86_64                                                                                                                                                                                                  13/14 
+DEBUG util.py:491:    Verifying  : keyutils-libs-devel-1.5.8-3.el7.x86_64                                                                                                                                                                                   14/14 
+DEBUG util.py:491:  Installed:
+DEBUG util.py:491:    byacc.x86_64 0:1.9.20130304-3.el7                           flex.x86_64 0:2.5.37-3.el7                           openssl-devel.x86_64 1:1.0.2k-12.el7                           pam-devel.x86_64 0:1.1.8-22.el7                          
+DEBUG util.py:491:  Dependency Installed:
+DEBUG util.py:491:    keyutils-libs-devel.x86_64 0:1.5.8-3.el7   krb5-devel.x86_64 0:1.15.1-19.el7   libcom_err-devel.x86_64 0:1.42.9-12.el7_5   libkadm5.x86_64 0:1.15.1-19.el7    libselinux-devel.x86_64 0:2.5-12.el7   libsepol-devel.x86_64 0:2.5-8.1.el7  
+DEBUG util.py:491:    libverto-devel.x86_64 0:0.2.5-4.el7        m4.x86_64 0:1.4.16-10.el7           pcre-devel.x86_64 0:8.32-17.el7             zlib-devel.x86_64 0:1.2.7-17.el7  
+DEBUG util.py:491:  Complete!
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/dev/pts'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/dev/shm'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/sys'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '-l', '/var/lib/mock/epel-7-x86_64/root/proc'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: rpm -qa --root '/var/lib/mock/epel-7-x86_64/root' --qf '%{nevra} %{buildtime} %{size} %{pkgid} installed\n' > ./installed_pkgs.log with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOSTNAME': 'mock', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'HOME': '/builddir', 'PS1': '<mock-chroot> \\s-\\v\\$ '} and shell True
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG backend.py:529:  Copying packages to result dir
+DEBUG util.py:226:  kill orphans
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['/bin/umount', '-n', '/var/lib/mock/epel-7-x86_64/root/var/cache/yum/'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 0
+DEBUG util.py:651:  child environment: None
+DEBUG util.py:577:  Executing command: ['btrfs', 'subv', 'list', '/var/lib/mock'] with env {'LANG': 'en_US.UTF-8', 'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOSTNAME': 'mock', 'HOME': '/builddir', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin'} and shell False
+DEBUG util.py:632:  Child return code was: 1
+DEBUG util.py:1392:  Please ignore the error above above about btrfs.

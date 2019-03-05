@@ -1,64 +1,63 @@
-version: 2
-jobs:
-  build:
-    machine: true
-    steps:    
-      - checkout
+defaults: &defaults
+    environment:
+      RPMLINT: 1
+    steps: # a set of executable commands
+      - checkout # special step to check out source code to working directory
       - run:
-          name: "Build all the .spec files via Docker image."
-          command: docker run -v ${PWD}:/sources -v ${PWD}:/output:Z ${DOCKER_IMAGE}:${OS_TYPE}-${OS_VERSION} /bin/bash -c "rm -rf /etc/yum.repos.d/CentOS-Vault.repo; rm -rf /etc/yum.repos.d/CentOS-Sources.repo; sed -i 's/-v OUTPUT_UID/-z "${OUTPUT_UID}"/' /usr/bin/build; /usr/bin/build"
-      - run:
-          name: "Get rid of .src.rpm files."
-          command: rm -rf *.src.rpm
-      - run:
-          name: "Check .rpm files."
-          command: stat *.rpm
-      - run:
-          name: "Where am I"
-          command: pwd
+          name: "Run the build itself: this will do rpmlint and check RPMs existence among other things."
+          command: build
       - persist_to_workspace:
-          root: /home/circleci
+          root: /output
           paths:
-            - project
+            - "*.rpm"
+
+version: 2 
+jobs: # a collection of steps
+  el6:
+    docker: # run the steps with Docker
+      - image: getpagespeed/rpmbuilder:centos-6
+    working_directory: /sources # directory where steps will run
+    <<: *defaults
+  el7:
+    docker:
+      - image: getpagespeed/rpmbuilder:centos-7
+    working_directory: /sources # directory where steps will run
+    <<: *defaults
   deploy:
-    machine: true
+    docker:
+      - image: centos:7
+    environment:
+      RPMLINT: 1
+    working_directory: /output
     steps:
       - attach_workspace:
-          at: /home/circleci 
-      - run:
-          name: "Delete stupid keys that was added by CircleCI by default"
-          command: ssh-add -D              
+          at: /output
       - add_ssh_keys:
           fingerprints:
-            - "8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82"      
+            - "8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82"
       - run:
-          name: "Delete stupid keys that was added by CircleCI by default"
-          command: cat ~/.ssh/config
+          name: "Install stuff to deploy"
+          command: yum -y install openssh-clients
       - run:
-          name: "Test contexts."
-          command: echo $GPS_BUILD_USER
-          context: getpagespeed-builder          
+          name: "Ensure project specific upload directory to avoid deploy collisions"
+          command: ssh -o StrictHostKeyChecking=no $GPS_BUILD_USER@$GPS_BUILD_SERVER "mkdir -p ~/incoming/$CIRCLE_PROJECT_REPONAME"
       - run:
           name: "Deploy all RPMs to GetPageSpeed repo."
-          command: scp -r *.rpm $GPS_BUILD_USER@$GPS_BUILD_SERVER:$GPS_EXTRAS_EL7/x86_64/RPMS/
-          context: getpagespeed-builder
+          command: scp -o StrictHostKeyChecking=no -q -r *.rpm $GPS_BUILD_USER@$GPS_BUILD_SERVER:~/incoming/$CIRCLE_PROJECT_REPONAME/
       - run:
-          name: "Sign the RPMs."
-          command: ssh $GPS_BUILD_USER@$GPS_BUILD_SERVER "~/rpm-sign.exp $GPS_EXTRAS_EL7/x86_64/RPMS/*.rpm"
-          context: getpagespeed-builder
-      - run:
-          name: "Recreate repo files."
-          command: ssh $GPS_BUILD_USER@$GPS_BUILD_SERVER "createrepo -v --deltas --oldpackagedirs $GPS_EXTRAS_EL7/x86_64/ $GPS_EXTRAS_EL7/x86_64/"
-          context: getpagespeed-builder  
-      - run:
-          name: "Generate repo view."
-          command: ssh $GPS_BUILD_USER@$GPS_BUILD_SERVER "repoview $GPS_EXTRAS_EL7/x86_64/"
-          context: getpagespeed-builder                    
+          name: "Trigger Deploy Hook."
+          command: ssh -o StrictHostKeyChecking=no -q $GPS_BUILD_USER@$GPS_BUILD_SERVER "nohup ~/scripts/incoming.sh $CIRCLE_PROJECT_REPONAME > ~/incoming/$CIRCLE_PROJECT_REPONAME/process.log 2>&1&"
 workflows:
   version: 2
-  build_deploy:
+  build-deploy:
     jobs:
-      - build
+      #- el6
+      - el7
       - deploy:
+          context: org-global
           requires:
-            - build
+            #- el6
+            - el7
+          filters:
+            branches:
+              only: master
