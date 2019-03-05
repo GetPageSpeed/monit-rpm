@@ -1,4 +1,6 @@
-Name:           monit
+%global debug_package %{nil}
+
+Name: monit
 Version: 5.25.3
 Release: 1%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
