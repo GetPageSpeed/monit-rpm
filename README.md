@@ -4,18 +4,21 @@
 
 Install latest Monit on CentOS using the following commands:
 
-    sudo yum install https://extras.getpagespeed.com/redhat/7/noarch/RPMS/getpagespeed-extras-7-0.el7.gps.noarch.rpm
+    sudo yum -y install https://extras.getpagespeed.com/release-el7-latest.rpm
     sudo yum install monit
-
-Should you find that there is a more recent (our built version can be found in repository's latest tag), please open a ticket.
 
 ## Background
 
-Monit in EPEL repository has not been updated in a year, but we want a more recent version at all times.
+When I noticed that Monit in EPEL repository has not been updated in a year, I thought of a way to have most recent version at all times.
 
-This repository contains spec file from [upstream](https://dl.fedoraproject.org/pub/epel/7/SRPMS/m/monit-5.14-1.el7.src.rpm) and rebuilds latest Monit version onto COPR. The result is a special YUM repository you can add to your system in order to install fresh Monit.
+This repository contains spec file from [upstream](https://dl.fedoraproject.org/pub/epel/7/SRPMS/m/monit-5.14-1.el7.src.rpm) and rebuilds latest Monit version onto COPR, GetPageSpeed Repository and PackageCloud. 
 
 ## Technical
 
-Using [Travis](https://gist.github.com/abn/daf262e7e454509df1429c87068923d1) to verify that the SRPM can be built successfully. The rest is done by COPR itself: it fetches the .spec file and builds SRPM on its own.
+This git repository is a great sample of deployment automation using CircleCI (deploy to GetPageSpeed) and Travis (test status and deploy to PackageCloud). Those working configs can be found in `.circleci` and `.travis.yml`, respectively.
 
+* [Travis](https://gist.github.com/abn/daf262e7e454509df1429c87068923d1) verifies that the SRPM can be built successfully and pushes the built package onto PackageCloud.
+* COPR is set to fetch the `.spec` file from here and builds SRPM / RPM on its own.
+* CircleCi tests SRPM build-ability and builds complete RPM and pushes that onto GetPageSpeed repo.
+
+Now as to how we know when a new version of Monit is released: that's done with a special script that basically checks BitBucket repository of Monit for recent releases, then updates and pushes the `.spec` file.
