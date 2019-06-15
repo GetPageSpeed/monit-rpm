@@ -36,7 +36,7 @@ and can execute meaningful causal actions in error situations.
 
 %build
 # --enable-profiling only ensures CFLAGS=-g which is needed for debuginfo package 
-%configure --disable-static --enable-optimized --enable-profiling %{?_smp_mflags}
+%configure --disable-static --enable-optimized --enable-profiling
 %make_build
 
 %install
