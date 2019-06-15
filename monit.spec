@@ -18,6 +18,7 @@ BuildRequires: byacc
 BuildRequires: systemd
 BuildRequires: gcc
 BuildRequires: make
+BuildRequires: zlib-devel
 
 Requires(post): systemd-sysv
 Requires(post): systemd
