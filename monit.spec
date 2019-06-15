@@ -1,5 +1,3 @@
-%global debug_package %{nil}
-
 Name: monit
 Version: 5.25.3
 Release: 1%{?dist}
@@ -37,7 +35,8 @@ and can execute meaningful causal actions in error situations.
 %autosetup
 
 %build
-%configure --disable-static --enable-optimized
+# --enable-profiling only ensures CFLAGS=-g which is needed for debuginfo package 
+%configure --disable-static --enable-optimized --enable-profiling %{?_smp_mflags}
 %make_build
 
 %install
