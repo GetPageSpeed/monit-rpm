@@ -1,8 +1,6 @@
-%global debug_package %{nil}
-
 Name: monit
 Version: 5.26.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet
@@ -38,8 +36,10 @@ and can execute meaningful causal actions in error situations.
 %autosetup
 
 %build
-# --enable-profiling not only ensures CFLAGS=-g (what we want), but also enables gmon.out everywhere :( 
-%configure --disable-static --enable-optimized
+# --enable-profiling not only ensures CFLAGS=-g (what we want), but also enables gmon.out everywhere :(
+# re-add -g to configure instead
+sed -i 's@-DNDEBUG@-DNDEBUG -g@' configure
+%configure --libdir=%{_libdir} --disable-static --enable-optimized
 %make_build
 
 %install
