@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %license COPYING
-%doc README
+%doc README.md
 %config(noreplace) %{_sysconfdir}/monitrc
 %config(noreplace) %{_sysconfdir}/monit.d/logging
 %config(noreplace) %{_sysconfdir}/logrotate.d/monit
