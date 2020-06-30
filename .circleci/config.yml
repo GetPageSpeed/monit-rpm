@@ -69,7 +69,10 @@ workflows:
   version: 2
   build-deploy-el6:
     jobs:
-      - el6
+      - el6:
+          filters:
+            branches:
+              only: none
       - deploy-el6:
           context: org-global
           requires:
