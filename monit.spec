@@ -1,5 +1,5 @@
 Name: monit
-Version: 5.27.0
+Version: 5.27.1
 Release: 1%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
@@ -104,6 +104,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Oct 25 2020 Danila Vershinin <info@getpagespeed.com> 5.27.1-1
+- release 5.27.1
+
 * Tue Jun 30 2020 Danila Vershinin <info@getpagespeed.com> 5.27.0-1
 - release 5.27.0
 
