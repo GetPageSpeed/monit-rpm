@@ -1,5 +1,5 @@
 Name: monit
-Version: 5.28.0
+Version: 5.28.1
 Release: 1%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
@@ -104,6 +104,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Jul 31 2021 Danila Vershinin <info@getpagespeed.com> 5.28.1-1
+- release 5.28.1
+
 * Tue Mar 30 2021 Danila Vershinin <info@getpagespeed.com> 5.28.0-1
 - release 5.28.0
 
