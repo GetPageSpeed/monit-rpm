@@ -55,7 +55,7 @@ mkdir -p $RPM_BUILD_ROOT%{_localstatedir}/log
 
 # systemd service file
 mkdir -p ${RPM_BUILD_ROOT}%{_unitdir}
-install -m0644 %{SOURCE3} ${RPM_BUILD_ROOT}%{_unitdir}/monit.service
+install -m0644 %{SOURCE3} ${RPM_BUILD_ROOT}%{_unitdir}/%{name}.service
 
 # Let's include some good defaults
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/monit.d
