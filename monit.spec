@@ -67,11 +67,9 @@ install -p -D -m0644 %{SOURCE4} $RPM_BUILD_ROOT%{_sysconfdir}/monit.d/logging
 %{__sed} -i 's/#  include \/etc\/monit.d\/\*/include \/etc\/monit.d\/\*/' \
     $RPM_BUILD_ROOT%{_sysconfdir}/monitrc
 
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %post
-%systemd_post monit.service
+%systemd_post %{name}.service
 
 # Moving old style configuration file to upstream's default location
 [ -f %{_sysconfdir}/monit.conf ] &&
