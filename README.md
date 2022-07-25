@@ -4,8 +4,8 @@
 
 Install latest Monit on CentOS using the following commands:
 
-    sudo yum -y install https://extras.getpagespeed.com/release-el$(rpm -E %{rhel})-latest.rpm
-    sudo yum install monit
+    sudo yum -y install https://extras.getpagespeed.com/release-latest.rpm
+    sudo yum -y install monit
 
 ## Background
 
