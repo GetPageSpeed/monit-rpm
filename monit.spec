@@ -6,7 +6,7 @@ Summary:        Manages and monitors processes, files, directories and devices
 Group:          Applications/Internet
 License:        AGPLv3
 URL:            https://mmonit.com/monit/
-Source0:        https://mmonit.com/monit/dist/%{name}-%{version}.tar.gz
+Source0:        https://bitbucket.org/tildeslash/monit/downloads/monit-%{version}.tar.gz
 Source2:        monit.logrotate
 Source3:        monit.service
 Source4:        monit-logging-conf
