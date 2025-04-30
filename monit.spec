@@ -1,5 +1,5 @@
 Name: monit
-Version: 5.35.0
+Version: 5.35.1
 Release: 1%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
@@ -102,6 +102,9 @@ install -p -D -m0644 %{SOURCE4} $RPM_BUILD_ROOT%{_sysconfdir}/monit.d/logging
 
 
 %changelog
+* Wed Apr 30 2025 Danila Vershinin <info@getpagespeed.com> 5.35.1-1
+- release 5.35.1
+
 * Thu Apr 10 2025 Danila Vershinin <info@getpagespeed.com> 5.35.0-1
 - release 5.35.0
 
