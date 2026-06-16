@@ -1,12 +1,12 @@
 Name: monit
 Version: 6.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet
 License:        AGPLv3
 URL:            https://mmonit.com/monit/
-Source0:        https://bitbucket.org/tildeslash/monit/downloads/monit-%{version}.tar.gz
+Source0:        https://mmonit.com/monit/dist/monit-%{version}.tar.gz
 Source2:        monit.logrotate
 Source3:        monit.service
 Source4:        monit-logging-conf
@@ -102,6 +102,9 @@ install -p -D -m0644 %{SOURCE4} $RPM_BUILD_ROOT%{_sysconfdir}/monit.d/logging
 
 
 %changelog
+* Tue Jun 16 2026 Danila Vershinin <info@getpagespeed.com> 6.0.0-2
+- point Source0 at upstream mmonit.com (bitbucket downloads/ 404s for 6.0.0)
+
 * Tue Jun 16 2026 Danila Vershinin <info@getpagespeed.com> 6.0.0-1
 - release 6.0.0
 
