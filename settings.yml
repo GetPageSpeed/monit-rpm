@@ -1,1 +1,6 @@
 resource_class: small
+# monit 6.0.0 requires C11 <stdatomic.h> which EL7's stock gcc 4.8.5 lacks.
+# EL7 is EOL (2024-06-30) — leave EL7 customers on the prior monit-5.35.2-1.el7
+# already in the repo rather than adopt devtoolset-10 just for one daemon.
+exclude:
+  - el7*

@@ -89,7 +89,8 @@ jobs:
         fingerprints:
         - 8c:a4:dd:2c:47:4c:63:aa:90:0b:e0:d6:15:be:87:82
     - run:
-        name: Ensure project specific upload directory to avoid deploy collisions
+        name: Ensure project specific upload directory to avoid deploy
+          collisions
         command: >-
           ssh -o StrictHostKeyChecking=no $GPS_BUILD_USER@$GPS_BUILD_SERVER "mkdir
           -p ~/incoming/${CIRCLE_PROJECT_REPONAME}/${DISTRO}/${ARCH}/${CIRCLE_BRANCH}"
@@ -105,61 +106,6 @@ jobs:
           > ~/incoming/$CIRCLE_PROJECT_REPONAME/$DISTRO/${ARCH}/${CIRCLE_BRANCH}/process.log
           2>&1&"
 workflows:
-  build-deploy-el7-x86_64:
-    jobs:
-    - build:
-        name: build-el7-x86_64
-        context: org-global
-        dist: el7
-        filters:
-          branches:
-            only:
-            - main
-            - master
-            - stable
-            - main
-    - deploy:
-        name: deploy-el7-x86_64
-        context: org-global
-        dist: el7
-        arch: x86_64
-        filters:
-          branches:
-            only:
-            - main
-            - master
-            - stable
-            - main
-        requires:
-        - build-el7-x86_64
-  build-deploy-el7-aarch64:
-    jobs:
-    - build:
-        name: build-el7-aarch64
-        context: org-global
-        dist: el7
-        filters:
-          branches:
-            only:
-            - main
-            - master
-            - stable
-            - main
-        resource_class: arm.medium
-    - deploy:
-        name: deploy-el7-aarch64
-        context: org-global
-        dist: el7
-        arch: aarch64
-        filters:
-          branches:
-            only:
-            - main
-            - master
-            - stable
-            - main
-        requires:
-        - build-el7-aarch64
   build-deploy-el8-x86_64:
     jobs:
     - build:
