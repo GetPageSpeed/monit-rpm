@@ -1,6 +1,6 @@
 Name: monit
-Version: 6.0.0
-Release: 2%{?dist}
+Version: 6.1.0
+Release: 1%{?dist}
 Summary:        Manages and monitors processes, files, directories and devices
 
 Group:          Applications/Internet
@@ -102,6 +102,9 @@ install -p -D -m0644 %{SOURCE4} $RPM_BUILD_ROOT%{_sysconfdir}/monit.d/logging
 
 
 %changelog
+* Sat Sep 05 2026 Danila Vershinin <info@getpagespeed.com> 6.1.0-1
+- release 6.1.0
+
 * Tue Jun 16 2026 Danila Vershinin <info@getpagespeed.com> 6.0.0-2
 - point Source0 at upstream mmonit.com (bitbucket downloads/ 404s for 6.0.0)
 
