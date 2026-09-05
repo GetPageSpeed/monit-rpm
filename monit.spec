@@ -1,3 +1,5 @@
+%global gittag release-6-1-0
+
 Name: monit
 Version: 6.1.0
 Release: 1%{?dist}
@@ -6,11 +8,15 @@ Summary:        Manages and monitors processes, files, directories and devices
 Group:          Applications/Internet
 License:        AGPLv3
 URL:            https://mmonit.com/monit/
-Source0:        https://mmonit.com/monit/dist/monit-%{version}.tar.gz
+Source0:        https://bitbucket.org/tildeslash/monit/get/%{gittag}.tar.gz
 Source2:        monit.logrotate
 Source3:        monit.service
 Source4:        monit-logging-conf
 
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: libtool
+BuildRequires: perl(Pod::Man)
 BuildRequires: flex
 BuildRequires: openssl-devel
 BuildRequires: pam-devel
@@ -33,7 +39,12 @@ and can execute meaningful causal actions in error situations.
 
 
 %prep
-%autosetup
+%setup -q -T -c -n %{name}-%{version}
+# Bitbucket archives have a commit-dependent top-level directory.
+tar -xzf %{SOURCE0} --strip-components=1
+./bootstrap
+# The distribution tarball promotes the full changelog from doc/.
+cp -p doc/CHANGES CHANGES
 
 %build
 # --enable-profiling not only ensures CFLAGS=-g (what we want), but also enables gmon.out everywhere :(
@@ -41,6 +52,10 @@ and can execute meaningful causal actions in error situations.
 sed -i 's@-DNDEBUG@-DNDEBUG -g@' configure
 %configure --libdir=%{_libdir} --disable-static --enable-optimized
 %make_build
+
+%check
+./monit -V | grep -F "This is Monit version %{version}"
+test -s monit.1
 
 %install
 %make_install
@@ -103,7 +118,8 @@ install -p -D -m0644 %{SOURCE4} $RPM_BUILD_ROOT%{_sysconfdir}/monit.d/logging
 
 %changelog
 * Sat Sep 05 2026 Danila Vershinin <info@getpagespeed.com> 6.1.0-1
-- release 6.1.0
+- Build from the upstream release tag and generate configure and man page
+- Verify executable version and generated manual during the build
 
 * Tue Jun 16 2026 Danila Vershinin <info@getpagespeed.com> 6.0.0-2
 - point Source0 at upstream mmonit.com (bitbucket downloads/ 404s for 6.0.0)
